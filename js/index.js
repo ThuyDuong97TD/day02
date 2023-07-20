@@ -371,6 +371,7 @@ for (let i = 0; i < 7; i++) {
   nutthemmon.style.position = "relative"
   nutthemmon.style.top = "50px"
   nutthemmon.style.left = "7px"
+  nutthemmon.style.border = "0"
  
 
 themonan.appendChild(nutthemmon);
