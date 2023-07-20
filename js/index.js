@@ -5,6 +5,7 @@ body.style.margin = "0";
 container.style.width = "100%";
 container.style.height = "100%";
 
+
 function buildNavbar() {
   let navbar = document.createElement("div");
   navbar.style.backgroundColor = "white";
@@ -22,6 +23,7 @@ function buildNavbar() {
   navbarLeft.style.height = " 100%";
   navbarLeft.style.display = " flex";
   navbarLeft.style.alignItems = "center";
+  navbarLeft.style.paddingLeft = "150px";
   let logo = document.createElement("img");
   logo.src = "https://1000logos.net/wp-content/uploads/2017/03/Kfc_logo.png";
   logo.style.height = "50px";
@@ -61,7 +63,8 @@ function buildNavbar() {
   navbarRight.style.height = "100%";
   navbarRight.style.display = "flex";
   navbarRight.style.justifyContent = "flex-end";
-  navbarRight.style.alignItems = " center";
+  navbarRight.style.alignItems = "center";
+  navbarRight.style.paddingRight ="150px"
   // navbarRight.style.padding = "5px";
   let logo00 = document.createElement("img");
   logo00.src =
@@ -135,7 +138,10 @@ box.style.display = "flex";
 box.style.justifyContent = "space-evenly";
 box.style.alignItems = "center";
 box.style.fontSize = "10px";
-box.style.columnGap = "30px";
+// box.style.columnGap = "1px";
+
+// box.style.paddingLeft = "50px";
+// box.style.paddingRight = "50px";
 
 for (let i = 0; i < thanhmenu.length; i++) {
   let thanhmenuButton = document.createElement("div");
@@ -152,6 +158,8 @@ for (let i = 0; i < thanhmenu.length; i++) {
   thanhmenuButton.style.fontWeight = "bold";
   thanhmenuButton.style.justifyContent = "center";
   thanhmenuButton.style.alignItems = "center";
+  thanhmenuButton.style.margin ="auto 0"
+
 
   box.appendChild(thanhmenuButton);
   menu.appendChild(box);
@@ -185,18 +193,21 @@ let monmoi = document.createElement("div");
 let textmonmoi = document.createElement("p");
 textmonmoi.innerHTML = "MÓN MỚI";
 textmonmoi.style.margin = "0";
-textmonmoi.style.padding = "0";
+textmonmoi.style.paddingLeft = "120px";
+textmonmoi.style.fontFamily = "arial"
 monmoi.style.width = "100%";
 monmoi.style.height = "40px";
 monmoi.style.backgroundColor = "white";
+
 
 container.appendChild(monmoi);
 monmoi.appendChild(textmonmoi);
 let main = document.createElement("div");
 main.className = "main";
-main.style.width = "100%";
+main.style.width = "75%";
 main.style.height = " 700px";
-main.style.backgroundColor = "red";
+main.style.backgroundColor = "white";
+main.style.margin = "0 auto";
 
 //  let dathang = ["Đặt Hàng"];
 //  dathang.style.color ="red";
@@ -211,18 +222,19 @@ hihi.style.color = "white";
 giaohang.appendChild(hihi);
 delivery.appendChild(giaohang);
 
-huhu.innerHTML = "Giao Hàng";
-huhu.style.color = "white";
 let icon1 = document.createElement("img");
-icon1.src = "https://cdn-icons-png.flaticon.com/512/9561/9561688.png";
+icon1.src = "";
 icon1.style.width = "20px";
 icon1.style.height = "auto";
+huhu.innerHTML = "Giao Hàng";
+huhu.style.color = "white";
+
 giaohang.style.width = "35%";
 giaohang.style.height = "45px";
 giaohang.style.columnGap = " 2px";
 giaohang.style.display = "flex";
 giaohang.style.alignItems = "center";
-giaohang.style.justifyContent = "space-evenly";
+giaohang.style.justifyContent = "space-between";
 giaohang.style.fontSize = " 14px";
 giaohang.style.fontFamily = "roboto";
 
@@ -236,8 +248,7 @@ haha.innerHTML = "hoặc Mang Đi";
 haha.style.color = " white";
 
 let icon2 = document.createElement("img");
-icon2.src =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxpwZxJpF2D4F4ryLU_1_qEgd8zACWvDLYmg&usqp=CAU";
+icon1.src = "";
 icon2.style.width = "20px";
 icon2.style.height = "20px";
 giaohang.appendChild(icon2);
@@ -311,36 +322,77 @@ listmonan.className = "listmonan";
     // backgroundColor : "red",
     display: "grid",
     gridGap: "1rem",
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
   };
 // listmonan.style.display = "flex";
 Object.assign(listmonan.style, listmonanStyle);
 for (let i = 0; i < 7; i++) {
   let themonan = document.createElement("div");
-  let hinhmonan = document.createElement("div");
+  let hinhmonan01 = document.createElement("div");
   let tenvagia = document.createElement("div");
-  let motamonan = document.createElement("div");
+  let motamonan01 = document.createElement("div");
+  let hinh = document.createElement("img");
+  hinh.src = hinhmonan[i];
+  hinh.style.width = "100%";
+  hinh.style.height = "auto";
+  hinh.style.borderRadius = "2px";
 
 
+  let ten = document.createElement("p");
+  let gia =document.createElement("p");
+  ten.innerHTML = tenmonan[i];
+  gia.innerHTML = giamonan[i];
+  themonan.appendChild(hinh);
+
+
+  tenvagia.appendChild(ten);
+  tenvagia.appendChild(gia);
+  themonan.appendChild(tenvagia);
+  tenvagia.style.width = "270px"
+  tenvagia.style.height = "20px"
+  tenvagia.style.fontFamily = "arial"
+  tenvagia.style.display = "flex"
+  tenvagia.style.justifyContent = "space-around"
+
+  //  let mota = document.createElement("p");
+  //  mota.innerHTML = motamonan[i];
+  //  motamonan.appendChild(motamonan01);
+  //  themonan.appendChild(motamonan);
+
+  let nutthemmon = document.createElement("button");
+  nutthemmon.innerHTML = "Thêm"
+  nutthemmon.style.fontFamily = "arial"
+  nutthemmon.style.color = "white"
+  nutthemmon.style.width = "250px"
+  nutthemmon.style.height = "50px"
+  nutthemmon.style.backgroundColor = "#CCCCCC"
+  nutthemmon.style.alignItems = "end"
+  nutthemmon.style.borderRadius = "25px"
+  nutthemmon.style.position = "relative"
+  nutthemmon.style.top = "50px"
+  nutthemmon.style.left = "7px"
+ 
+
+themonan.appendChild(nutthemmon);
   /** @type {CSSStyleDeclaration} */
 let themonanStyle = {
-  width: "60%",
-  height: "300px",
+  // width: "400px",
+   height: "350px",
 
- backgroundColor : "black",
- border : "5px solid blue",
-  display: "grid",
-  gridGap: "1rem",
-  gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+ backgroundColor : "white",
+ border : "1px solid #CCCCCC",
+ borderRadius : "3px",
+ boxshadow: "rgba(0, 0, 0, 0.09) 0px -3px 5px"
+
+//   display: "grid",
+//   gridGap: "1rem",
+//   gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
 };
 Object.assign(themonan.style, themonanStyle);
   listmonan.appendChild(themonan);
 }
-
-
-container.appendChild(main);
-// main.appendChild(delivery);
-// main.appendChild(menu);
 main.appendChild(monmoi);
 main.appendChild(listmonan);
+container.appendChild(main);
+
 
