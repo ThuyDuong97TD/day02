@@ -132,12 +132,14 @@ let thanhmenu = [
 ];
 
 let box = document.createElement("div");
-box.style.width = "100%";
+box.style.width = "89.8%";
 box.style.height = "45px";
 box.style.display = "flex";
-box.style.justifyContent = "space-evenly";
+box.style.justifyContent = "space-between";
+box.style.justifyItems = "space-between"
 box.style.alignItems = "center";
 box.style.fontSize = "10px";
+box.style.margin = "0 auto"
 // box.style.columnGap = "1px";
 
 // box.style.paddingLeft = "50px";
@@ -156,9 +158,9 @@ for (let i = 0; i < thanhmenu.length; i++) {
   thanhmenuButton.style.fontSize = " 0.7rem";
   thanhmenuButton.style.fontFamily = " arial";
   thanhmenuButton.style.fontWeight = "bold";
-  thanhmenuButton.style.justifyContent = "center";
+  thanhmenuButton.style.justifyContent = "space-between";
   thanhmenuButton.style.alignItems = "center";
-  thanhmenuButton.style.margin ="auto 0"
+  thanhmenuButton.style.marginLeft ="100px"
 
 
   box.appendChild(thanhmenuButton);
@@ -193,7 +195,7 @@ let monmoi = document.createElement("div");
 let textmonmoi = document.createElement("p");
 textmonmoi.innerHTML = "MÓN MỚI";
 textmonmoi.style.margin = "0";
-textmonmoi.style.paddingLeft = "120px";
+textmonmoi.style.paddingLeft = "10px";
 textmonmoi.style.fontFamily = "arial"
 monmoi.style.width = "100%";
 monmoi.style.height = "40px";
@@ -224,19 +226,22 @@ delivery.appendChild(giaohang);
 
 let icon1 = document.createElement("img");
 icon1.src = "";
-icon1.style.width = "20px";
-icon1.style.height = "auto";
+// icon1.style.width = "20px";
+// icon1.style.height = "auto";
 huhu.innerHTML = "Giao Hàng";
 huhu.style.color = "white";
 
 giaohang.style.width = "35%";
 giaohang.style.height = "45px";
-giaohang.style.columnGap = " 2px";
+giaohang.style.columnGap = "1px";
 giaohang.style.display = "flex";
 giaohang.style.alignItems = "center";
 giaohang.style.justifyContent = "space-between";
-giaohang.style.fontSize = " 14px";
+giaohang.style.fontSize = " 10px";
 giaohang.style.fontFamily = "roboto";
+// giaohang.style.marginLeft = "400px"
+giaohang.style.margin = "0 auto"
+
 
 // let texgiaohang = ["Giao Hàng"];
 giaohang.appendChild(icon1);
@@ -244,13 +249,13 @@ giaohang.appendChild(huhu);
 
 delivery.appendChild(giaohang);
 let haha = document.createElement("p");
-haha.innerHTML = "hoặc Mang Đi";
+haha.innerHTML = "Hoặc Mang Đi";
 haha.style.color = " white";
 
 let icon2 = document.createElement("img");
 icon1.src = "";
-icon2.style.width = "20px";
-icon2.style.height = "20px";
+// icon2.style.width = "20px";
+// icon2.style.height = "20px";
 giaohang.appendChild(icon2);
 giaohang.appendChild(haha);
 delivery.appendChild(giaohang);
