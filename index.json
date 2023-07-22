@@ -20,5 +20,35 @@
         "number":"30",
         "price": 54000,
         "photo":"https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA_PHI-LE.jpg?v=Lnno5L"
+    },
+    {
+        "id":"4",
+        "name":"Salad",
+        "number": "35",
+        "price": 25000,
+        "photo":"https://static.kfcvietnam.com.vn/images/items/lg/SALAD-HAT-GA-VIEN.jpg?v=4pNJl3"
+    },
+    {
+        "id":"5",
+        "name":"Cơm Gà Rán",
+        "number":"33",
+        "price": 45000,
+        "photo":"https://static.kfcvietnam.com.vn/images/items/lg/Rice-F.Chicken.jpg?v=4pNJl3"
+    },
+    {
+        "id":"6",
+        "name":"Burger Tôm",
+        "number":"33",
+        "price": 44000,
+        "photo":"https://static.kfcvietnam.com.vn/images/items/lg/Burger-Shrimp.jpg?v=4pNJl3"
+    },
+    {
+        "id":"7",
+        "name":"Cơm Gà Xiên Que",
+        "number":"33",
+        "price": 45000,
+        "photo":"https://static.kfcvietnam.com.vn/images/items/lg/Rice-Skewer.jpg?v=4pNJl3"
     }
+
+
 ]
