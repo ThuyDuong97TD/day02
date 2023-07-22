@@ -6,11 +6,10 @@ myDialog.innerHTML = "Giỏ Hàng Của Bạn";
 function openDialog() {
   myDialog.setAttribute("open", "open");
   myDialog.show();
-  myDialog.style.width = "40%";
+  myDialog.style.width = "78%";
   myDialog.style.height = "250px";
   myDialog.style.borderRadius = "15px";
-  // myDialog.style.display = "flex";
-  // myDialog.style.justifyContent = "space-between";
+
 }
 function closeDialog() {
   myDialog.setAttribute("close", "close");
@@ -30,6 +29,54 @@ x.style.float = "right";
 x.addEventListener("click", closeDialog);
 myDialog.appendChild(x);
 
+
+let dsthanhtoan = document.createElement("div");
+dsthanhtoan.style.width = "auto";
+dsthanhtoan.style.height = "auto";
+dsthanhtoan.style.backgroundColor = "white";
+dsthanhtoan.style.display = "flex";
+dsthanhtoan.style.flexDirection ="row";
+dsthanhtoan.style.lineBreak = "auto";
+dsthanhtoan.style.alignItems = "center";
+dsthanhtoan.style.columnGap = "3px";
+myDialog.appendChild(dsthanhtoan);
+
+let chinhsua = document.createElement("div");
+chinhsua.style.width = "97.1%";
+chinhsua.style.height = "2px";
+chinhsua.style.backgroundColor = "white";
+chinhsua.style.justifyContent ="center";
+chinhsua.style.columnGap = "10px";
+
+myDialog.appendChild(chinhsua);
+
+let chargeButton = document.createElement("button");
+chargeButton.innerHTML = "Thanh Toán";
+chargeButton.style.width = " 100px";
+chargeButton.style.height = "20px";
+// chargeButton.style.margin = "0 auto";
+chargeButton.style.backgroundColor = "#FFFFFF";
+chargeButton.style.color = "black";
+chargeButton.style.borderRadius = "15px";
+chargeButton.style.display = "block";
+chargeButton.style.float = "right";
+chargeButton.style.alignItems = "center";
+chargeButton.style.justifyContent = "center";
+
+chargeButton.addEventListener("click", () => {
+  tinhTien();
+});
+
+
+// let chinhsuanut = document.createElement("div");
+// chinhsuanut.appendChild(chinhsua);
+// chinhsuanut.style.width ="20px";
+// chinhsuanut.style.height ="20px";
+// chinhsuanut.backgroundColor = "gray";
+
+// myDialog.appendChild(chinhsua);
+chinhsua.appendChild(chargeButton);
+//CONTAINER
 let container = document.getElementById("container");
 let body = document.body;
 body.style.margin = "0";
@@ -37,6 +84,7 @@ body.style.margin = "0";
 container.style.width = "100%";
 container.style.height = "100%";
 
+//NAVBAR
 function buildNavbar() {
   let navbar = document.createElement("div");
   navbar.style.backgroundColor = "white";
@@ -87,6 +135,7 @@ function buildNavbar() {
   }
   navbar.appendChild(navbarLeft);
 
+  //NAVBAR RIGHT
   let navbarRight = document.createElement("div");
   navbarRight.style.width = "50%";
   navbarRight.style.height = "100%";
@@ -138,6 +187,7 @@ function buildNavbar() {
 let newNavbar = buildNavbar();
 container.appendChild(newNavbar);
 
+//THANH MÀU ĐEN
 let delivery = document.createElement("div");
 delivery.style.width = "100%";
 delivery.style.height = "55px";
@@ -385,8 +435,8 @@ function addToCart(item) {
   hinhanh.src = item.photo;
   hinhanh.style.width = "40px";
   hinhanh.style.height = "40px";
-  // thanhtoan.style.width = "300px";
-  // thanhtoan.style.height = "50px";
+  thanhtoan.style.width = "300px";
+  thanhtoan.style.height = "50px";
   // thanhtoan.style.display = "flex";
   let tenthanhtoan = document.createElement("p");
   tenthanhtoan.innerHTML = item.name;
@@ -409,30 +459,35 @@ function addToCart(item) {
     id: item.id,
     quantity: 1,
   });
-  myDialog.appendChild(tenthanhtoan);
-  myDialog.appendChild(giathanhtoan);
-  myDialog.appendChild(hinhanh);
+  dsthanhtoan.appendChild(tenthanhtoan);
+  dsthanhtoan.appendChild(giathanhtoan);
+  dsthanhtoan.appendChild(hinhanh);
   console.log(cart);
   return;
 }
 let nutthanhtoan = document.createElement("div");
-// nutthanhtoan.style.width = "50px";
-// nutthanhtoan,style.height ="20px"
-let chargeButton = document.createElement("button");
-chargeButton.innerHTML = "Thanh Toán";
-// chargeButton.style.width = " 100px";
-// chargeButton.style.height = "20px";
-// chargeButton.style.margin = "0 auto";
-chargeButton.style.backgroundColor = "#FFFFFF";
-chargeButton.style.color = "black";
-chargeButton.style.borderRadius = "15px";
+nutthanhtoan.style.width = "50px";
+nutthanhtoan.style.height ="20px"
+// nutthanhtoan.style.display = "flex";
+nutthanhtoan.style.margin = "0 auto";
 
-chargeButton.addEventListener("click", () => {
-  tinhTien();
-});
-container.appendChild(chargeButton);
-nutthanhtoan.appendChild(chargeButton);
+
+// let chargeButton = document.createElement("button");
+// chargeButton.innerHTML = "Thanh Toán";
+// // chargeButton.style.width = " 100px";
+// // chargeButton.style.height = "20px";
+// // chargeButton.style.margin = "0 auto";
+// chargeButton.style.backgroundColor = "#FFFFFF";
+// chargeButton.style.color = "black";
+// chargeButton.style.borderRadius = "15px";
+
+// chargeButton.addEventListener("click", () => {
+//   tinhTien();
+// });
+// container.appendChild(chargeButton);
 myDialog.appendChild(nutthanhtoan);
+nutthanhtoan.appendChild(chargeButton);
+
 function tinhTien() {
   if (cart.length == 0) {
     alert("BẠN CHƯA THÊM GÌ VÀO GIỎ HÀNG");
@@ -454,3 +509,5 @@ myDialog.appendChild(thanhtoan);
 // myDialog.appendChild(tenmonan);
 // myDialog.appendChild(giamonan)
 // myDialog.appendChild(total);
+dsthanhtoan.appendChild(thanhtoan);
+
