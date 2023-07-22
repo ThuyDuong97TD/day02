@@ -1,10 +1,12 @@
+import myJson from "../index.json" assert { type: "json" };
+// console.log(myJson);
+
 let container = document.getElementById("container");
 let body = document.body;
 body.style.margin = "0";
 // container.style.display = "flex";
 container.style.width = "100%";
 container.style.height = "100%";
-
 
 function buildNavbar() {
   let navbar = document.createElement("div");
@@ -64,7 +66,7 @@ function buildNavbar() {
   navbarRight.style.display = "flex";
   navbarRight.style.justifyContent = "flex-end";
   navbarRight.style.alignItems = "center";
-  navbarRight.style.paddingRight ="150px"
+  navbarRight.style.paddingRight = "150px";
   // navbarRight.style.padding = "5px";
   let logo00 = document.createElement("img");
   logo00.src =
@@ -90,6 +92,7 @@ function buildNavbar() {
   logo02.style.height = "20px";
   logo02.style.alignItems = "center";
   logo02.style.marginLeft = "10px";
+
   navbarRight.appendChild(logo02);
 
   let logo03 = document.createElement("img");
@@ -132,14 +135,14 @@ let thanhmenu = [
 ];
 
 let box = document.createElement("div");
-box.style.width = "89.8%";
+box.style.width = "95%";
 box.style.height = "45px";
 box.style.display = "flex";
 box.style.justifyContent = "space-between";
-box.style.justifyItems = "space-between"
+box.style.justifyItems = "space-between";
 box.style.alignItems = "center";
 box.style.fontSize = "10px";
-box.style.margin = "0 auto"
+box.style.margin = "0 auto";
 // box.style.columnGap = "1px";
 
 // box.style.paddingLeft = "50px";
@@ -160,8 +163,7 @@ for (let i = 0; i < thanhmenu.length; i++) {
   thanhmenuButton.style.fontWeight = "bold";
   thanhmenuButton.style.justifyContent = "space-between";
   thanhmenuButton.style.alignItems = "center";
-  thanhmenuButton.style.marginLeft ="100px"
-
+  thanhmenuButton.style.marginLeft = "100px";
 
   box.appendChild(thanhmenuButton);
   menu.appendChild(box);
@@ -196,11 +198,10 @@ let textmonmoi = document.createElement("p");
 textmonmoi.innerHTML = "MÓN MỚI";
 textmonmoi.style.margin = "0";
 textmonmoi.style.paddingLeft = "10px";
-textmonmoi.style.fontFamily = "arial"
+textmonmoi.style.fontFamily = "arial";
 monmoi.style.width = "100%";
 monmoi.style.height = "40px";
 monmoi.style.backgroundColor = "white";
-
 
 container.appendChild(monmoi);
 monmoi.appendChild(textmonmoi);
@@ -240,8 +241,7 @@ giaohang.style.justifyContent = "space-between";
 giaohang.style.fontSize = " 10px";
 giaohang.style.fontFamily = "roboto";
 // giaohang.style.marginLeft = "400px"
-giaohang.style.margin = "0 auto"
-
+giaohang.style.margin = "0 auto";
 
 // let texgiaohang = ["Giao Hàng"];
 giaohang.appendChild(icon1);
@@ -282,82 +282,80 @@ delivery.appendChild(giaohang);
 
 delivery.appendChild(icon1);
 delivery.appendChild(icon2);
-let hinhmonan = [
-  "https://static.kfcvietnam.com.vn/images/items/lg/1-Kwaffle.jpg?v=LDqyE4",
-  "https://static.kfcvietnam.com.vn/images/items/lg/2-Kwaffle.jpg?v=LDqyE4",
-  "https://static.kfcvietnam.com.vn/images/items/lg/Kwaffle-hd.jpg?v=LDqyE4",
-  "https://static.kfcvietnam.com.vn/images/items/lg/2-Hash-Browns.jpg?v=LDqyE4",
-  "https://static.kfcvietnam.com.vn/images/items/lg/3-Hash-Browns.jpg?v=LDqyE4",
-  "https://static.kfcvietnam.com.vn/images/items/lg/4-Hash-Browns.jpg?v=LDqyE4",
-  "https://static.kfcvietnam.com.vn/images/items/lg/6-Hash-Browns.jpg?v=LDqyE4",
-];
-let tenmonan = [
-  "1 Gà Cuộn Bắc Kinh",
-  "2 Gà Cuộn Bắc Kinh",
-  "Gà Cuộn Bắc Kinh",
-  "2 Bánh Khoai Tây Chiên",
-  "3 Bánh Khoai Tây Chiên",
-  "4 Bánh Khoai Tây Chiên",
-  "6 Bánh Khoai Tây Chiên",
-];
-let giamonan = [
-  "39.000đ",
-  "74.000đ",
-  "89.000đ",
-  "17.000đ",
-  "25.000đ",
-  "46.000",
-];
-let motamonan = [
-  "01 Gà Cuộn Bắc Kinh",
-  "02 gà Cuộn Bắc Kinh",
-  "01 Gà Cuộn Bắc Kinh + 01 miếng Gà rán (OR/ HS/ NSC) + 01 Khoai tây chiên (vừa) hoặc 01 Khoai tây nghiền (vừa) & 01 Bắp cải trộn (vừa)",
-  "2 Bánh Khoai Tây Chiên",
-  "3 Bánh Khoai Tây Chiên",
-  "4 Bánh Khoai Tây Chiên",
-  "6 Bánh Khoai Tây Chiên",
-];
+// let hinhmonan = [
+//   "https://static.kfcvietnam.com.vn/images/items/lg/1-Kwaffle.jpg?v=LDqyE4",
+//   "https://static.kfcvietnam.com.vn/images/items/lg/2-Kwaffle.jpg?v=LDqyE4",
+//   "https://static.kfcvietnam.com.vn/images/items/lg/Kwaffle-hd.jpg?v=LDqyE4",
+//   "https://static.kfcvietnam.com.vn/images/items/lg/2-Hash-Browns.jpg?v=LDqyE4",
+//   "https://static.kfcvietnam.com.vn/images/items/lg/3-Hash-Browns.jpg?v=LDqyE4",
+//   "https://static.kfcvietnam.com.vn/images/items/lg/4-Hash-Browns.jpg?v=LDqyE4",
+//   "https://static.kfcvietnam.com.vn/images/items/lg/6-Hash-Browns.jpg?v=LDqyE4",
+// ];
+// let tenmonan = [
+//   "1 Gà Cuộn Bắc Kinh",
+//   "2 Gà Cuộn Bắc Kinh",
+//   "Gà Cuộn Bắc Kinh",
+//   "2 Bánh Khoai Tây Chiên",
+//   "3 Bánh Khoai Tây Chiên",
+//   "4 Bánh Khoai Tây Chiên",
+//   "6 Bánh Khoai Tây Chiên",
+// ];
+// let giamonan = [
+//   "39.000đ",
+//   "74.000đ",
+//   "89.000đ",
+//   "17.000đ",
+//   "25.000đ",
+//   "46.000",
+// ];
+// let motamonan = [
+//   "01 Gà Cuộn Bắc Kinh",
+//   "02 gà Cuộn Bắc Kinh",
+//   "01 Gà Cuộn Bắc Kinh + 01 miếng Gà rán (OR/ HS/ NSC) + 01 Khoai tây chiên (vừa) hoặc 01 Khoai tây nghiền (vừa) & 01 Bắp cải trộn (vừa)",
+//   "2 Bánh Khoai Tây Chiên",
+//   "3 Bánh Khoai Tây Chiên",
+//   "4 Bánh Khoai Tây Chiên",
+//   "6 Bánh Khoai Tây Chiên",
+// ];
 
 let listmonan = document.createElement("div");
 listmonan.className = "listmonan";
-  /** @type {CSSStyleDeclaration} */
-  let listmonanStyle = {
-    //  width: "100%",
-    //  height: "100%",
-    // backgroundColor : "red",
-    display: "grid",
-    gridGap: "1rem",
-    gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
-  };
+/** @type {CSSStyleDeclaration} */
+let listmonanStyle = {
+  //  width: "100%",
+  //  height: "100%",
+  // backgroundColor : "red",
+  display: "grid",
+  gridGap: "1rem",
+  gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+};
 // listmonan.style.display = "flex";
 Object.assign(listmonan.style, listmonanStyle);
-for (let i = 0; i < 7; i++) {
+for (let i = 0; i < myJson.length; i++) {
   let themonan = document.createElement("div");
   let hinhmonan01 = document.createElement("div");
   let tenvagia = document.createElement("div");
   let motamonan01 = document.createElement("div");
   let hinh = document.createElement("img");
-  hinh.src = hinhmonan[i];
+  hinh.src = myJson[i].photo;
   hinh.style.width = "100%";
   hinh.style.height = "auto";
   hinh.style.borderRadius = "2px";
 
-
   let ten = document.createElement("p");
-  let gia =document.createElement("p");
-  ten.innerHTML = tenmonan[i];
-  gia.innerHTML = giamonan[i];
+  let gia = document.createElement("p");
+  ten.innerHTML = myJson[i].name;
+  gia.innerHTML = myJson[i].price;
   themonan.appendChild(hinh);
-
 
   tenvagia.appendChild(ten);
   tenvagia.appendChild(gia);
   themonan.appendChild(tenvagia);
-  tenvagia.style.width = "270px"
-  tenvagia.style.height = "20px"
-  tenvagia.style.fontFamily = "arial"
-  tenvagia.style.display = "flex"
-  tenvagia.style.justifyContent = "space-around"
+  tenvagia.style.width = "270px";
+  tenvagia.style.height = "20px";
+  tenvagia.style.fontFamily = "arial";
+  tenvagia.style.display = "flex";
+  tenvagia.style.justifyContent = "space-around";
 
   //  let mota = document.createElement("p");
   //  mota.innerHTML = motamonan[i];
@@ -365,40 +363,165 @@ for (let i = 0; i < 7; i++) {
   //  themonan.appendChild(motamonan);
 
   let nutthemmon = document.createElement("button");
-  nutthemmon.innerHTML = "Thêm"
-  nutthemmon.style.fontFamily = "arial"
-  nutthemmon.style.color = "white"
-  nutthemmon.style.width = "250px"
-  nutthemmon.style.height = "50px"
-  nutthemmon.style.backgroundColor = "#CCCCCC"
-  nutthemmon.style.alignItems = "end"
-  nutthemmon.style.borderRadius = "25px"
-  nutthemmon.style.position = "relative"
-  nutthemmon.style.top = "50px"
-  nutthemmon.style.left = "7px"
-  nutthemmon.style.border = "0"
- 
+  nutthemmon.innerHTML = "Thêm";
+  nutthemmon.style.fontFamily = "arial";
+  nutthemmon.style.color = "white";
+  nutthemmon.style.width = "250px";
+  nutthemmon.style.height = "50px";
+  nutthemmon.style.backgroundColor = "#CCCCCC";
+  nutthemmon.style.alignItems = "end";
+  nutthemmon.style.borderRadius = "25px";
+  // nutthemmon.style.position = "relative";
+  // nutthemmon.style.top = "50px";
+  // nutthemmon.style.left = "7px";
+  nutthemmon.style.border = "0";
 
-themonan.appendChild(nutthemmon);
+  nutthemmon.addEventListener("click", addToCart);
+
+  themonan.appendChild(nutthemmon);
   /** @type {CSSStyleDeclaration} */
-let themonanStyle = {
-  // width: "400px",
-   height: "350px",
-
- backgroundColor : "white",
- border : "1px solid #CCCCCC",
- borderRadius : "3px",
- boxshadow: "rgba(0, 0, 0, 0.09) 0px -3px 5px"
-
-//   display: "grid",
-//   gridGap: "1rem",
-//   gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
-};
-Object.assign(themonan.style, themonanStyle);
+  let themonanStyle = {
+    // width: "400px",
+    height: "450px",
+    backgroundColor: "white",
+    border: "1px solid #CCCCCC",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    // borderRadius: "3px",
+    // boxshadow: "rgba(0, 0, 0, 0.09) 0px -3px 5px",
+    //   display: "grid",
+    //   gridGap: "1rem",
+    //   gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+  };
+  Object.assign(themonan.style, themonanStyle);
   listmonan.appendChild(themonan);
 }
 main.appendChild(monmoi);
 main.appendChild(listmonan);
 container.appendChild(main);
+/** @type {CSSStyleDeclaration} */
+let combomonanStyle = {
+  //  width: "100%",
+  //  height: "100%",
+  // backgroundColor : "red",
+  display: "grid",
+  gridGap: "1rem",
+  gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+};
+// listmonan.style.display = "flex";
 
+// Object.assign(combomonan.style, combomonanStyle);
 
+// let combomonan = {};
+// let test = document.createElement("div");
+// for (let i = 0; i < myJson.length; i++) {
+//   let items = document.createElement("p");
+//   let items01 = document.createElement("p");
+//   let photo = document.createElement("img");
+//   items.innerHTML = myJson[i].name;
+//   items01.innerHTML = myJson[i].price;
+//   photo.src = myJson[i].photo;
+
+//   test.appendChild(items);
+//   test.appendChild(photo);
+//   test.appendChild(items01);
+// }
+class Food {
+  /**
+   * @param {string} id
+   * @param {string} name
+   * @param {number} price
+   * @param {number} stock
+   */
+
+  constructor(id, name, price, stock) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.stock = stock;
+  }
+}
+/**@type {Food[]} */
+class Item {
+  /**
+   * @param {string} id
+   * @param {string} name
+   * @param {number} number
+   * @param {number} price
+   * @param {string} photoURL
+   */
+
+  constructor(id, name, number, price, photoURL) {
+    this.id = id;
+    this.name = name;
+    this.number = number;
+    this.price = price;
+    this.photoURL = photoURL;
+  }
+}
+
+/** @type {Item[]}*/
+let listOfItems = [...myJson];
+/** @type {Item[]} */
+let cart = [];
+
+console.log(listOfItems);
+
+function addToCart(item) {
+  let index1 = cart.findIndex((tem) => {
+    return item.id == Food.id;
+  });
+  if (index1 != -1) {
+    cart[index1].quantity++;
+    console.log(cart);
+    return;
+  }
+  cart.push({
+    id: Food.id,
+    quantity: 1,
+  });
+  console.log(cart);
+  return;
+  // let index = cart.findIndex((e) => {
+  //   e.id == item.id;
+  // });
+  // if (index) {
+  //   cart[index].quantity++;
+  //   console.log(cart);
+  //   return;
+  // } else {
+  //   cart.push(
+  //     (item = {
+  //       id: item.id,
+  //       quantity: 1,
+  //     })
+  //   );
+  //   console.log(cart);
+  //   return;
+}
+// }
+let chargeButton = document.createElement("button");
+chargeButton.innerHTML = "Thanh Toan";
+chargeButton.addEventListener("click", () => {
+  tinhTien();
+});
+container.appendChild(chargeButton);
+
+function tinhTien() {
+  if (cart.length == 0) {
+    alert("Chua co gi trong gio hang");
+  }
+  let total = 0;
+  cart.forEach((item) => {
+    myJson.forEach((Food) => {
+      if (Food.id == item.id) {
+        total + Food.price * item.quantity;
+      }
+    });
+  });
+  alert("Tong tien la" + total);
+  cart = [];
+}
+// main.appendChild(test);
