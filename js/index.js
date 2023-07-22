@@ -3,19 +3,21 @@ import myJson from "../index.json" assert { type: "json" };
 
 let myDialog = document.createElement("dialog");
 myDialog.innerHTML = "Giỏ Hàng Của Bạn";
-function openDialog(){
+function openDialog() {
   myDialog.setAttribute("open", "open");
   myDialog.show();
-  myDialog.style.width = "400px";
+  myDialog.style.width = "40%";
   myDialog.style.height = "250px";
   myDialog.style.borderRadius = "15px";
+  // myDialog.style.display = "flex";
+  // myDialog.style.justifyContent = "space-between";
 }
-function closeDialog(){
+function closeDialog() {
   myDialog.setAttribute("close", "close");
   myDialog.close();
-  // myDialog.style.width = "20px";
-  // myDialog.style.height = "10px";
-  // myDialog,style,borderRadius = "15px";
+  myDialog.style.width = "20px";
+  myDialog.style.height = "10px";
+  myDialog, style, (borderRadius = "15px");
 }
 let x = document.createElement("button");
 x.style.width = "25px";
@@ -28,12 +30,9 @@ x.style.float = "right";
 x.addEventListener("click", closeDialog);
 myDialog.appendChild(x);
 
-
 let container = document.getElementById("container");
 let body = document.body;
 body.style.margin = "0";
-
-
 
 container.style.width = "100%";
 container.style.height = "100%";
@@ -43,7 +42,6 @@ function buildNavbar() {
   navbar.style.backgroundColor = "white";
   navbar.style.width = "100%";
   navbar.style.height = " 60px";
-
 
   navbar.style.margin = "0";
   navbar.style.display = "flex";
@@ -174,13 +172,11 @@ box.style.alignItems = "center";
 box.style.fontSize = "10px";
 box.style.margin = "0 auto";
 
-
 for (let i = 0; i < thanhmenu.length; i++) {
   let thanhmenuButton = document.createElement("div");
   thanhmenuButton.innerHTML = thanhmenu[i];
   thanhmenuButton.style.backgroundColor = "white";
   thanhmenuButton.style.alignContent = " center";
-
 
   thanhmenuButton.style.color = " black";
   thanhmenuButton.style.color = " black";
@@ -195,7 +191,6 @@ for (let i = 0; i < thanhmenu.length; i++) {
   box.appendChild(thanhmenuButton);
   menu.appendChild(box);
 }
-
 
 container.appendChild(menu);
 
@@ -218,7 +213,6 @@ main.style.height = " 700px";
 main.style.backgroundColor = "white";
 main.style.margin = "0 auto";
 main.appendChild(myDialog);
-
 
 let giaohang = document.createElement("div");
 let huhu = document.createElement("p");
@@ -245,7 +239,6 @@ giaohang.style.fontSize = " 10px";
 giaohang.style.fontFamily = "roboto";
 
 giaohang.style.margin = "0 auto";
-
 
 giaohang.appendChild(icon1);
 giaohang.appendChild(huhu);
@@ -289,7 +282,6 @@ let listmonan = document.createElement("div");
 listmonan.className = "listmonan";
 /** @type {CSSStyleDeclaration} */
 let listmonanStyle = {
-
   display: "grid",
   gridGap: "1rem",
   gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
@@ -323,7 +315,6 @@ for (let i = 0; i < myJson.length; i++) {
   tenvagia.style.display = "flex";
   tenvagia.style.justifyContent = "space-around";
 
-
   let nutthemmon = document.createElement("button");
   nutthemmon.innerHTML = "Thêm";
   nutthemmon.style.fontFamily = "arial";
@@ -336,7 +327,7 @@ for (let i = 0; i < myJson.length; i++) {
   nutthemmon.style.border = "0";
 
   nutthemmon.addEventListener("click", () => {
-    addToCart(item)
+    addToCart(item);
   });
 
   themonan.appendChild(nutthemmon);
@@ -350,7 +341,6 @@ for (let i = 0; i < myJson.length; i++) {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-evenly",
- 
   };
   Object.assign(themonan.style, themonanStyle);
   listmonan.appendChild(themonan);
@@ -360,27 +350,10 @@ main.appendChild(listmonan);
 container.appendChild(main);
 /** @type {CSSStyleDeclaration} */
 let combomonanStyle = {
-
   display: "grid",
   gridGap: "1rem",
   gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
 };
-// class Food {
-//   /**
-//    * @param {string} id
-//    * @param {string} name
-//    * @param {number} price
-//    * @param {number} stock
-//    */
-
-//   constructor(id, name, price, stock) {
-//     this.id = id;
-//     this.name = name;
-//     this.price = price;
-//     this.stock = stock;
-//   }
-// }
-// /**@type {Food[]} */
 class Item {
   /**
    * @param {string} id
@@ -407,9 +380,23 @@ let cart = [];
 console.log(listOfItems);
 
 function addToCart(item) {
-  let tenmonan = document.createElement("p");
-tenmonan.innerHTML = item.name;
-  let giamonan = document.createElement("p");
+  let thanhtoan = document.createElement("div");
+  let hinhanh = document.createElement("img");
+  hinhanh.src = item.photo;
+  hinhanh.style.width = "40px";
+  hinhanh.style.height = "40px";
+  // thanhtoan.style.width = "300px";
+  // thanhtoan.style.height = "50px";
+  // thanhtoan.style.display = "flex";
+  let tenthanhtoan = document.createElement("p");
+  tenthanhtoan.innerHTML = item.name;
+  let giathanhtoan = document.createElement("p");
+  giathanhtoan.innerHTML = item.price;
+
+  thanhtoan.appendChild(hinhanh);
+  thanhtoan.appendChild(tenthanhtoan);
+  thanhtoan.appendChild(giathanhtoan);
+
   let index1 = cart.findIndex((tem) => {
     return item.id == tem.id;
   });
@@ -422,23 +409,33 @@ tenmonan.innerHTML = item.name;
     id: item.id,
     quantity: 1,
   });
-  myDialog.appendChild(tenmonan);
+  myDialog.appendChild(tenthanhtoan);
+  myDialog.appendChild(giathanhtoan);
+  myDialog.appendChild(hinhanh);
   console.log(cart);
   return;
-
-
 }
-
+let nutthanhtoan = document.createElement("div");
+// nutthanhtoan.style.width = "50px";
+// nutthanhtoan,style.height ="20px"
 let chargeButton = document.createElement("button");
-chargeButton.innerHTML = "Thanh Toan";
+chargeButton.innerHTML = "Thanh Toán";
+// chargeButton.style.width = " 100px";
+// chargeButton.style.height = "20px";
+// chargeButton.style.margin = "0 auto";
+chargeButton.style.backgroundColor = "#FFFFFF";
+chargeButton.style.color = "black";
+chargeButton.style.borderRadius = "15px";
+
 chargeButton.addEventListener("click", () => {
   tinhTien();
 });
 container.appendChild(chargeButton);
-
+nutthanhtoan.appendChild(chargeButton);
+myDialog.appendChild(nutthanhtoan);
 function tinhTien() {
   if (cart.length == 0) {
-    alert("Chua co gi trong gio hang");
+    alert("BẠN CHƯA THÊM GÌ VÀO GIỎ HÀNG");
   }
   let total = 0;
   cart.forEach((item) => {
@@ -448,14 +445,12 @@ function tinhTien() {
       }
     });
   });
-  alert("Tong tien la " + total);
+  alert("TỔNG TIỀN CỦA BẠN LÀ " + total);
   cart = [];
 }
 myDialog.appendChild(chargeButton);
-
-
+myDialog.appendChild(thanhtoan);
 
 // myDialog.appendChild(tenmonan);
 // myDialog.appendChild(giamonan)
 // myDialog.appendChild(total);
-
