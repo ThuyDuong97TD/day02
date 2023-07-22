@@ -1,10 +1,40 @@
 import myJson from "../index.json" assert { type: "json" };
 // console.log(myJson);
 
+let myDialog = document.createElement("dialog");
+myDialog.innerHTML = "Giỏ Hàng Của Bạn";
+function openDialog(){
+  myDialog.setAttribute("open", "open");
+  myDialog.show();
+  myDialog.style.width = "400px";
+  myDialog.style.height = "250px";
+  myDialog.style.borderRadius = "15px";
+}
+function closeDialog(){
+  myDialog.setAttribute("close", "close");
+  myDialog.close();
+  // myDialog.style.width = "20px";
+  // myDialog.style.height = "10px";
+  // myDialog,style,borderRadius = "15px";
+}
+let x = document.createElement("button");
+x.style.width = "25px";
+x.style.height = "25px";
+x.style.borderRadius = "15px";
+x.style.color = "gray";
+x.innerHTML = "X";
+x.style.display = "block";
+x.style.float = "right";
+x.addEventListener("click", closeDialog);
+myDialog.appendChild(x);
+
+
 let container = document.getElementById("container");
 let body = document.body;
 body.style.margin = "0";
-// container.style.display = "flex";
+
+
+
 container.style.width = "100%";
 container.style.height = "100%";
 
@@ -14,7 +44,7 @@ function buildNavbar() {
   navbar.style.width = "100%";
   navbar.style.height = " 60px";
 
-  //   navbar.style.paddingLeft = "300px"
+
   navbar.style.margin = "0";
   navbar.style.display = "flex";
   navbar.style.justifyContent = "space-between";
@@ -31,7 +61,7 @@ function buildNavbar() {
   logo.style.height = "50px";
   logo.style.width = "120px";
   logo.style.display = "flex";
-  // logo.style.padding = "5px";
+
   logo.style.fontSize = " 10px";
   navbarLeft.appendChild(logo);
   let options = ["THỰC ĐƠN", "KHUYẾN MÃI", "HỆ THỐNG NHÀ HÀNG"];
@@ -46,7 +76,6 @@ function buildNavbar() {
     optionButton.innerHTML = options[i];
     optionButton.style.backgroundColor = "white";
     optionButton.style.alignContent = " center";
-    // optionButton.style.padding = "10px";
 
     optionButton.style.color = " black";
     optionButton.style.color = " black";
@@ -67,7 +96,7 @@ function buildNavbar() {
   navbarRight.style.justifyContent = "flex-end";
   navbarRight.style.alignItems = "center";
   navbarRight.style.paddingRight = "150px";
-  // navbarRight.style.padding = "5px";
+
   let logo00 = document.createElement("img");
   logo00.src =
     " https://icons.veryicon.com/png/o/miscellaneous/basic-icon/english-11.png";
@@ -92,6 +121,7 @@ function buildNavbar() {
   logo02.style.height = "20px";
   logo02.style.alignItems = "center";
   logo02.style.marginLeft = "10px";
+  logo02.addEventListener("click", openDialog);
 
   navbarRight.appendChild(logo02);
 
@@ -143,17 +173,14 @@ box.style.justifyItems = "space-between";
 box.style.alignItems = "center";
 box.style.fontSize = "10px";
 box.style.margin = "0 auto";
-// box.style.columnGap = "1px";
 
-// box.style.paddingLeft = "50px";
-// box.style.paddingRight = "50px";
 
 for (let i = 0; i < thanhmenu.length; i++) {
   let thanhmenuButton = document.createElement("div");
   thanhmenuButton.innerHTML = thanhmenu[i];
   thanhmenuButton.style.backgroundColor = "white";
   thanhmenuButton.style.alignContent = " center";
-  // optionButton.style.padding = "10px";
+
 
   thanhmenuButton.style.color = " black";
   thanhmenuButton.style.color = " black";
@@ -169,27 +196,6 @@ for (let i = 0; i < thanhmenu.length; i++) {
   menu.appendChild(box);
 }
 
-// let menuBox = document.createElement("div");
-// menuBox.style.display = "flex";
-// menuBox.style.justifyContent = " space-evenly";
-// menuBox.style.alignItems = "end";
-// menuBox.style.fontSize = "10px";
-// for (let i = 0; i < thanhmenu.length; i++) {
-//   let menuButton = document.createElement("div");
-//   menuButton.innerHTML = thanhmenu[i];
-//   menuButton.style.backgroundColor = "white";
-//   menuButton.style.alignContent = " center";
-//   // optionButton.style.padding = "10px";
-//   menuButton.style.color = " black";
-//   menuButton.style.color = " black";
-//   menuButton.style.border = "none";
-//   menuButton.style.fontSize = " 0.7rem";
-//   menuButton.style.fontFamily = " arial";
-//   menuButton.style.fontWeight = "bold";
-
-//   menuBox.appendChild(menuButton);
-//   menu.appendChild(menuBox);
-// }
 
 container.appendChild(menu);
 
@@ -211,11 +217,9 @@ main.style.width = "75%";
 main.style.height = " 700px";
 main.style.backgroundColor = "white";
 main.style.margin = "0 auto";
+main.appendChild(myDialog);
 
-//  let dathang = ["Đặt Hàng"];
-//  dathang.style.color ="red";
-// dathang.style.fontSize = "10px";
-// delivery.appendChild(dathang);
+
 let giaohang = document.createElement("div");
 let huhu = document.createElement("p");
 let hihi = document.createElement("p");
@@ -227,8 +231,7 @@ delivery.appendChild(giaohang);
 
 let icon1 = document.createElement("img");
 icon1.src = "";
-// icon1.style.width = "20px";
-// icon1.style.height = "auto";
+
 huhu.innerHTML = "Giao Hàng";
 huhu.style.color = "white";
 
@@ -240,10 +243,10 @@ giaohang.style.alignItems = "center";
 giaohang.style.justifyContent = "space-between";
 giaohang.style.fontSize = " 10px";
 giaohang.style.fontFamily = "roboto";
-// giaohang.style.marginLeft = "400px"
+
 giaohang.style.margin = "0 auto";
 
-// let texgiaohang = ["Giao Hàng"];
+
 giaohang.appendChild(icon1);
 giaohang.appendChild(huhu);
 
@@ -254,8 +257,7 @@ haha.style.color = " white";
 
 let icon2 = document.createElement("img");
 icon1.src = "";
-// icon2.style.width = "20px";
-// icon2.style.height = "20px";
+
 giaohang.appendChild(icon2);
 giaohang.appendChild(haha);
 delivery.appendChild(giaohang);
@@ -282,70 +284,34 @@ delivery.appendChild(giaohang);
 
 delivery.appendChild(icon1);
 delivery.appendChild(icon2);
-// let hinhmonan = [
-//   "https://static.kfcvietnam.com.vn/images/items/lg/1-Kwaffle.jpg?v=LDqyE4",
-//   "https://static.kfcvietnam.com.vn/images/items/lg/2-Kwaffle.jpg?v=LDqyE4",
-//   "https://static.kfcvietnam.com.vn/images/items/lg/Kwaffle-hd.jpg?v=LDqyE4",
-//   "https://static.kfcvietnam.com.vn/images/items/lg/2-Hash-Browns.jpg?v=LDqyE4",
-//   "https://static.kfcvietnam.com.vn/images/items/lg/3-Hash-Browns.jpg?v=LDqyE4",
-//   "https://static.kfcvietnam.com.vn/images/items/lg/4-Hash-Browns.jpg?v=LDqyE4",
-//   "https://static.kfcvietnam.com.vn/images/items/lg/6-Hash-Browns.jpg?v=LDqyE4",
-// ];
-// let tenmonan = [
-//   "1 Gà Cuộn Bắc Kinh",
-//   "2 Gà Cuộn Bắc Kinh",
-//   "Gà Cuộn Bắc Kinh",
-//   "2 Bánh Khoai Tây Chiên",
-//   "3 Bánh Khoai Tây Chiên",
-//   "4 Bánh Khoai Tây Chiên",
-//   "6 Bánh Khoai Tây Chiên",
-// ];
-// let giamonan = [
-//   "39.000đ",
-//   "74.000đ",
-//   "89.000đ",
-//   "17.000đ",
-//   "25.000đ",
-//   "46.000",
-// ];
-// let motamonan = [
-//   "01 Gà Cuộn Bắc Kinh",
-//   "02 gà Cuộn Bắc Kinh",
-//   "01 Gà Cuộn Bắc Kinh + 01 miếng Gà rán (OR/ HS/ NSC) + 01 Khoai tây chiên (vừa) hoặc 01 Khoai tây nghiền (vừa) & 01 Bắp cải trộn (vừa)",
-//   "2 Bánh Khoai Tây Chiên",
-//   "3 Bánh Khoai Tây Chiên",
-//   "4 Bánh Khoai Tây Chiên",
-//   "6 Bánh Khoai Tây Chiên",
-// ];
 
 let listmonan = document.createElement("div");
 listmonan.className = "listmonan";
 /** @type {CSSStyleDeclaration} */
 let listmonanStyle = {
-  //  width: "100%",
-  //  height: "100%",
-  // backgroundColor : "red",
+
   display: "grid",
   gridGap: "1rem",
   gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
 };
-// listmonan.style.display = "flex";
+
 Object.assign(listmonan.style, listmonanStyle);
 for (let i = 0; i < myJson.length; i++) {
+  let item = myJson[i];
   let themonan = document.createElement("div");
   let hinhmonan01 = document.createElement("div");
   let tenvagia = document.createElement("div");
   let motamonan01 = document.createElement("div");
   let hinh = document.createElement("img");
-  hinh.src = myJson[i].photo;
+  hinh.src = item.photo;
   hinh.style.width = "100%";
   hinh.style.height = "auto";
   hinh.style.borderRadius = "2px";
 
   let ten = document.createElement("p");
   let gia = document.createElement("p");
-  ten.innerHTML = myJson[i].name;
-  gia.innerHTML = myJson[i].price;
+  ten.innerHTML = item.name;
+  gia.innerHTML = item.price;
   themonan.appendChild(hinh);
 
   tenvagia.appendChild(ten);
@@ -357,10 +323,6 @@ for (let i = 0; i < myJson.length; i++) {
   tenvagia.style.display = "flex";
   tenvagia.style.justifyContent = "space-around";
 
-  //  let mota = document.createElement("p");
-  //  mota.innerHTML = motamonan[i];
-  //  motamonan.appendChild(motamonan01);
-  //  themonan.appendChild(motamonan);
 
   let nutthemmon = document.createElement("button");
   nutthemmon.innerHTML = "Thêm";
@@ -371,12 +333,11 @@ for (let i = 0; i < myJson.length; i++) {
   nutthemmon.style.backgroundColor = "#CCCCCC";
   nutthemmon.style.alignItems = "end";
   nutthemmon.style.borderRadius = "25px";
-  // nutthemmon.style.position = "relative";
-  // nutthemmon.style.top = "50px";
-  // nutthemmon.style.left = "7px";
   nutthemmon.style.border = "0";
 
-  nutthemmon.addEventListener("click", addToCart);
+  nutthemmon.addEventListener("click", () => {
+    addToCart(item)
+  });
 
   themonan.appendChild(nutthemmon);
   /** @type {CSSStyleDeclaration} */
@@ -389,11 +350,7 @@ for (let i = 0; i < myJson.length; i++) {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-evenly",
-    // borderRadius: "3px",
-    // boxshadow: "rgba(0, 0, 0, 0.09) 0px -3px 5px",
-    //   display: "grid",
-    //   gridGap: "1rem",
-    //   gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+ 
   };
   Object.assign(themonan.style, themonanStyle);
   listmonan.appendChild(themonan);
@@ -403,47 +360,27 @@ main.appendChild(listmonan);
 container.appendChild(main);
 /** @type {CSSStyleDeclaration} */
 let combomonanStyle = {
-  //  width: "100%",
-  //  height: "100%",
-  // backgroundColor : "red",
+
   display: "grid",
   gridGap: "1rem",
   gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
 };
-// listmonan.style.display = "flex";
+// class Food {
+//   /**
+//    * @param {string} id
+//    * @param {string} name
+//    * @param {number} price
+//    * @param {number} stock
+//    */
 
-// Object.assign(combomonan.style, combomonanStyle);
-
-// let combomonan = {};
-// let test = document.createElement("div");
-// for (let i = 0; i < myJson.length; i++) {
-//   let items = document.createElement("p");
-//   let items01 = document.createElement("p");
-//   let photo = document.createElement("img");
-//   items.innerHTML = myJson[i].name;
-//   items01.innerHTML = myJson[i].price;
-//   photo.src = myJson[i].photo;
-
-//   test.appendChild(items);
-//   test.appendChild(photo);
-//   test.appendChild(items01);
+//   constructor(id, name, price, stock) {
+//     this.id = id;
+//     this.name = name;
+//     this.price = price;
+//     this.stock = stock;
+//   }
 // }
-class Food {
-  /**
-   * @param {string} id
-   * @param {string} name
-   * @param {number} price
-   * @param {number} stock
-   */
-
-  constructor(id, name, price, stock) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.stock = stock;
-  }
-}
-/**@type {Food[]} */
+// /**@type {Food[]} */
 class Item {
   /**
    * @param {string} id
@@ -470,8 +407,11 @@ let cart = [];
 console.log(listOfItems);
 
 function addToCart(item) {
+  let tenmonan = document.createElement("p");
+tenmonan.innerHTML = item.name;
+  let giamonan = document.createElement("p");
   let index1 = cart.findIndex((tem) => {
-    return item.id == Food.id;
+    return item.id == tem.id;
   });
   if (index1 != -1) {
     cart[index1].quantity++;
@@ -479,29 +419,16 @@ function addToCart(item) {
     return;
   }
   cart.push({
-    id: Food.id,
+    id: item.id,
     quantity: 1,
   });
+  myDialog.appendChild(tenmonan);
   console.log(cart);
   return;
-  // let index = cart.findIndex((e) => {
-  //   e.id == item.id;
-  // });
-  // if (index) {
-  //   cart[index].quantity++;
-  //   console.log(cart);
-  //   return;
-  // } else {
-  //   cart.push(
-  //     (item = {
-  //       id: item.id,
-  //       quantity: 1,
-  //     })
-  //   );
-  //   console.log(cart);
-  //   return;
+
+
 }
-// }
+
 let chargeButton = document.createElement("button");
 chargeButton.innerHTML = "Thanh Toan";
 chargeButton.addEventListener("click", () => {
@@ -515,13 +442,20 @@ function tinhTien() {
   }
   let total = 0;
   cart.forEach((item) => {
-    myJson.forEach((Food) => {
-      if (Food.id == item.id) {
-        total + Food.price * item.quantity;
+    listOfItems.forEach((food) => {
+      if (food.id == item.id) {
+        total += food.price * item.quantity;
       }
     });
   });
-  alert("Tong tien la" + total);
+  alert("Tong tien la " + total);
   cart = [];
 }
-// main.appendChild(test);
+myDialog.appendChild(chargeButton);
+
+
+
+// myDialog.appendChild(tenmonan);
+// myDialog.appendChild(giamonan)
+// myDialog.appendChild(total);
+

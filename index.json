@@ -3,14 +3,14 @@
         "id" : "1",
         "name": "Combo Ăn Trưa 1",
         "number": "10",
-        "price": "39000",
+        "price": 39000,
         "photo": "https://static.kfcvietnam.com.vn/images/items/xs/MIRINDA-HS.jpg?v=Lnno5L"
     },
     {
         "id": "2",
        "name": "Combo Ăn Trưa 2",
         "number":"20",
-        "price":"44000",
+        "price":44000,
         "photo":"https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-FLAVA.jpg?v=Lnno5L"
 
     },
@@ -18,7 +18,7 @@
         "id":"3",
         "name":"Combo Ăn Trưa 3",
         "number":"30",
-        "price": "44000",
+        "price": 54000,
         "photo":"https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA_PHI-LE.jpg?v=Lnno5L"
     }
 ]
