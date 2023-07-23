@@ -6,8 +6,8 @@ myDialog.innerHTML = "Giỏ Hàng Của Bạn";
 function openDialog() {
   myDialog.setAttribute("open", "open");
   myDialog.show();
-  myDialog.style.width = "78%";
-  myDialog.style.height = "250px";
+  myDialog.style.width = "88%";
+  myDialog.style.height = "300px";
   myDialog.style.borderRadius = "15px";
 
 }
@@ -19,10 +19,12 @@ function closeDialog() {
   myDialog, style, (borderRadius = "15px");
 }
 let x = document.createElement("button");
-x.style.width = "25px";
+x.style.width = "30px";
 x.style.height = "25px";
-x.style.borderRadius = "15px";
-x.style.color = "gray";
+x.style.borderRadius = "10px";
+x.style.color = "white";
+x.style.backgroundColor = "#CCCCCC";
+x.style.border = "0";
 x.innerHTML = "X";
 x.style.display = "block";
 x.style.float = "right";
@@ -38,44 +40,47 @@ dsthanhtoan.style.display = "flex";
 dsthanhtoan.style.flexDirection ="row";
 dsthanhtoan.style.lineBreak = "auto";
 dsthanhtoan.style.alignItems = "center";
-dsthanhtoan.style.columnGap = "3px";
+dsthanhtoan.style.columnGap = "20px";
+dsthanhtoan.style.lineBreak = "auto";
+dsthanhtoan.style.paddingBottom = "140px";
+dsthanhtoan.style.fontFamily = "roboto";
 myDialog.appendChild(dsthanhtoan);
 
 let chinhsua = document.createElement("div");
-chinhsua.style.width = "97.1%";
-chinhsua.style.height = "2px";
+chinhsua.style.width = "57.7%";
+chinhsua.style.height = " 50px";
 chinhsua.style.backgroundColor = "white";
-chinhsua.style.justifyContent ="center";
+// chinhsua.style.justifyContent ="center";
+// chinhsua.style.alignItems = "center";
 chinhsua.style.columnGap = "10px";
 
-myDialog.appendChild(chinhsua);
+
+
 
 let chargeButton = document.createElement("button");
 chargeButton.innerHTML = "Thanh Toán";
-chargeButton.style.width = " 100px";
-chargeButton.style.height = "20px";
+chargeButton.style.width = " 200px";
+chargeButton.style.height = "50px";
+// chargeButton.style.alignItems = "center";
+// chargeButton.style.justifyContent = "center";
 // chargeButton.style.margin = "0 auto";
-chargeButton.style.backgroundColor = "#FFFFFF";
-chargeButton.style.color = "black";
-chargeButton.style.borderRadius = "15px";
+
+chargeButton.style.color = "white";
+chargeButton.style.backgroundColor = "#CCCCCC";
+chargeButton.style.borderRadius = "25px";
 chargeButton.style.display = "block";
 chargeButton.style.float = "right";
-chargeButton.style.alignItems = "center";
-chargeButton.style.justifyContent = "center";
+chargeButton.style.border = "0";
+chinhsua.appendChild(chargeButton);
+myDialog.appendChild(chinhsua);
 
 chargeButton.addEventListener("click", () => {
   tinhTien();
 });
 
 
-// let chinhsuanut = document.createElement("div");
-// chinhsuanut.appendChild(chinhsua);
-// chinhsuanut.style.width ="20px";
-// chinhsuanut.style.height ="20px";
-// chinhsuanut.backgroundColor = "gray";
 
-// myDialog.appendChild(chinhsua);
-chinhsua.appendChild(chargeButton);
+// chinhsua.appendChild(chargeButton);
 //CONTAINER
 let container = document.getElementById("container");
 let body = document.body;
@@ -404,7 +409,7 @@ let combomonanStyle = {
   gridGap: "1rem",
   gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
 };
-class Item {
+class Item { //định kiểu dữ liệu
   /**
    * @param {string} id
    * @param {string} name
@@ -413,7 +418,7 @@ class Item {
    * @param {string} photoURL
    */
 
-  constructor(id, name, number, price, photoURL) {
+  constructor(id, name, number, price, photoURL) { // hàm khởi tạo
     this.id = id;
     this.name = name;
     this.number = number;
@@ -422,14 +427,14 @@ class Item {
   }
 }
 
-/** @type {Item[]}*/
+/** @type {Item[]}*/  
 let listOfItems = [...myJson];
 /** @type {Item[]} */
 let cart = [];
 
-console.log(listOfItems);
+console.log(listOfItems);  
 
-function addToCart(item) {
+function addToCart(item )  { 
   let thanhtoan = document.createElement("div");
   let hinhanh = document.createElement("img");
   hinhanh.src = item.photo;
@@ -447,17 +452,17 @@ function addToCart(item) {
   thanhtoan.appendChild(tenthanhtoan);
   thanhtoan.appendChild(giathanhtoan);
 
-  let index1 = cart.findIndex((tem) => {
-    return item.id == tem.id;
+  let index1 = cart.findIndex((tem) => { // tìm kiếm phần tử trong mảng
+    return item.id == tem.id; 
   });
   if (index1 != -1) {
-    cart[index1].quantity++;
-    console.log(cart);
+    cart[index1].quantity++; 
+    console.log(cart); 
     return;
   }
   cart.push({
-    id: item.id,
-    quantity: 1,
+    id: item.id, 
+    quantity: 1, 
   });
   dsthanhtoan.appendChild(tenthanhtoan);
   dsthanhtoan.appendChild(giathanhtoan);
@@ -465,49 +470,31 @@ function addToCart(item) {
   console.log(cart);
   return;
 }
-let nutthanhtoan = document.createElement("div");
-nutthanhtoan.style.width = "50px";
-nutthanhtoan.style.height ="20px"
-// nutthanhtoan.style.display = "flex";
-nutthanhtoan.style.margin = "0 auto";
-
-
-// let chargeButton = document.createElement("button");
-// chargeButton.innerHTML = "Thanh Toán";
-// // chargeButton.style.width = " 100px";
-// // chargeButton.style.height = "20px";
-// // chargeButton.style.margin = "0 auto";
-// chargeButton.style.backgroundColor = "#FFFFFF";
-// chargeButton.style.color = "black";
-// chargeButton.style.borderRadius = "15px";
-
-// chargeButton.addEventListener("click", () => {
-//   tinhTien();
-// });
-// container.appendChild(chargeButton);
-myDialog.appendChild(nutthanhtoan);
-nutthanhtoan.appendChild(chargeButton);
+// let nutthanhtoan = document.createElement("div");
+// nutthanhtoan.style.width = "50px";
+// nutthanhtoan.style.height ="20px"
+// nutthanhtoan.style.margin = "0 auto";
+// nutthanhtoan.style.backgroundColor = "red";
+// myDialog.appendChild(nutthanhtoan);
+// nutthanhtoan.appendChild(chargeButton);
 
 function tinhTien() {
-  if (cart.length == 0) {
+  if (cart.length == 0) { 
     alert("BẠN CHƯA THÊM GÌ VÀO GIỎ HÀNG");
   }
   let total = 0;
-  cart.forEach((item) => {
-    listOfItems.forEach((food) => {
-      if (food.id == item.id) {
-        total += food.price * item.quantity;
+  cart.forEach((item) => { // duyệt qua từng phần tử trong mảng
+    listOfItems.forEach((food) => { 
+      if (food.id == item.id) { 
+        total += food.price * item.quantity; 
       }
     });
   });
   alert("TỔNG TIỀN CỦA BẠN LÀ " + total);
-  cart = [];
+  cart = []; 
 }
-myDialog.appendChild(chargeButton);
+// myDialog.appendChild(chargeButton);
 myDialog.appendChild(thanhtoan);
 
-// myDialog.appendChild(tenmonan);
-// myDialog.appendChild(giamonan)
-// myDialog.appendChild(total);
 dsthanhtoan.appendChild(thanhtoan);
 
